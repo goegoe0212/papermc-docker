@@ -1,0 +1,26 @@
+services:
+  minecraft:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PAPERMC_VERSION=${PAPERMC_VERSION}
+        - BUILD=${BUILD}
+        - JAR_NAME=${JAR_NAME}
+    ports:
+      - 25565:25565
+    volumes:
+      - ./data/world:/opt/minecraft/world
+      - ./data/world_nether:/opt/minecraft/world_nether
+      - ./data/world_the_end:/opt/minecraft/world_the_end
+      - ./data/logs:/opt/minecraft/logs
+      - ./data/config:/opt/minecraft/config
+      - ./config/bukkit.yml:/opt/minecraft/bukkit.yml
+      - ./config/commands.yml:/opt/minecraft/commands.yml
+      - ./config/help.yml:/opt/minecraft/help.yml
+      - ./config/permissions.yml:/opt/minecraft/permissions.yml
+      - ./config/server.properties:/opt/minecraft/server.properties
+      - ./config/spigot.yml:/opt/minecraft/spigot.yml
+      - ./plugins:/opt/minecraft/plugins
+
+
