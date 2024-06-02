@@ -7,6 +7,9 @@ services:
         - PAPERMC_VERSION=${PAPERMC_VERSION}
         - BUILD=${BUILD}
         - JAR_NAME=${JAR_NAME}
+        - RCON_VERSION=${RCON_VERSION}
+        - MAX_MEMORY=${MAX_MEMORY}
+        - MIN_MEMORY=${MIN_MEMORY}
     ports:
       - 25565:25565
     volumes:
